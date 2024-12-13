@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "491e55c4-fd1e-4940-82e1-4f335fb019f0",
+		"name": "api-users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2962118",
+		"_collection_link": "https://crimson-firefly-4343.postman.co/workspace/react---gif-expert-app~d1e56cd6-7010-4092-82d7-e4471a1b67cc/collection/2962118-491e55c4-fd1e-4940-82e1-4f335fb019f0?action=share&source=collection_link&creator=2962118"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"paul@smartjob.com\",\r\n    \"password\": \"hunter2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MzQwOTY0NzMsImlzcyI6Ind3dy5zbWFydGpvYi5jb20iLCJzdWIiOiJwYXVsQHNtYXJ0am9iLmNvbSIsImV4cCI6MTczNDA5NzM3M30.tuXzhSql7PeMicMrMYiN1i6Vt2CeSirFwnRxSRvAHAo5XhCVEM0x5cb9E2uyJT7T",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MzQwOTY0NzMsImlzcyI6Ind3dy5zbWFydGpvYi5jb20iLCJzdWIiOiJwYXVsQHNtYXJ0am9iLmNvbSIsImV4cCI6MTczNDA5NzM3M30.tuXzhSql7PeMicMrMYiN1i6Vt2CeSirFwnRxSRvAHAo5XhCVEM0x5cb9E2uyJT7T",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Juan Rodriguez\",\r\n  \"email\": \"juan@rodriguez.com\",\r\n  \"password\": \"hunter2\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"1234567\",\r\n      \"cityCode\": \"1\",\r\n      \"countryCode\": \"57\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
